@@ -1,0 +1,90 @@
+# -------------------------------------------------------------------
+# Global defaults
+# -------------------------------------------------------------------
+
+# Normalize line endings for all text files (do not depend on core.autocrlf)
+* text=auto
+
+# -------------------------------------------------------------------
+# Go
+# -------------------------------------------------------------------
+
+# Ensure Go is treated as Go by GitHub Linguist
+*.go text linguist-language=Go
+
+# Go modules / workspaces
+go.mod text
+go.sum text
+go.work text
+go.work.sum text
+
+# -------------------------------------------------------------------
+# PowerShell (Windows-native)
+# -------------------------------------------------------------------
+
+*.ps1  text eol=crlf
+*.psm1 text eol=crlf
+*.psd1 text eol=crlf
+
+# -------------------------------------------------------------------
+# Python
+# -------------------------------------------------------------------
+
+*.py text eol=lf
+
+# -------------------------------------------------------------------
+# D2 diagrams
+# -------------------------------------------------------------------
+
+*.d2 text eol=lf
+# Optional override if GitHub misclassifies:
+# *.d2 linguist-language=D2
+
+# -------------------------------------------------------------------
+# Shell / Build scripts
+# -------------------------------------------------------------------
+
+*.sh text eol=lf
+Makefile text
+*.mk text
+
+# -------------------------------------------------------------------
+# Documentation
+# -------------------------------------------------------------------
+
+# Exclude Markdown from language stats
+*.md linguist-documentation
+
+# Man pages
+*.1 linguist-documentation
+*.3 linguist-documentation
+*.7 linguist-documentation
+
+# -------------------------------------------------------------------
+# Generated / Vendored
+# -------------------------------------------------------------------
+
+# Standard Go vendoring
+vendor/** linguist-vendored
+
+# Common generated Go patterns (conservative)
+*_generated.go linguist-generated
+*_gen.go       linguist-generated
+*.pb.go        linguist-generated
+*.mock.go      linguist-generated
+
+# -------------------------------------------------------------------
+# Binary & assets
+# -------------------------------------------------------------------
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.svg  binary
+
+*.zip binary
+*.tar binary
+*.gz  binary
+
+*.exe binary
